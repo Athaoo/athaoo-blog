@@ -8,9 +8,10 @@ import axios, {
 import { Article, AddArticleType, UpdateArticleType, MySuccessRes, loginSuccessRes } from '../types'
 import { getAllArticles as getCommonAllArticles, getOneArticle as getCommonOneArticle } from '..'
 
-const baseUrl = __APP_ENV__.API_URL
+const apiUrl = __APP_ENV__.API_URL
+
 const instance = axios.create({
-  baseURL: baseUrl,
+  baseURL: apiUrl,
   timeout: 5000,
 })
 

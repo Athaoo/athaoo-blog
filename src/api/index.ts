@@ -4,10 +4,10 @@ import { TestData, Article, ArticleListQueryType } from './types'
 import { useRequest as useRequestA } from 'ahooks'
 import type { Options, Plugin } from 'ahooks/lib/useRequest/src/types'
 
-const baseUrl = __APP_ENV__.API_URL
+const apiUrl = __APP_ENV__.API_URL
 
 const instance = axios.create({
-  baseURL: baseUrl,
+  baseURL: apiUrl,
   timeout: 500,
 })
 

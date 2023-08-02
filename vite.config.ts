@@ -25,11 +25,7 @@ export default defineConfig(({ command, mode }) => {
         '@components': resolve(__dirname, './src/components'),
       },
     },
-    // 因为开发环境blog和admin同时热更，所以端口不确定谁是谁，没必要写死
-    // server: {
-    //   port: 5173,
-    //   open: false,
-    // },
+    // 因为开发环境blog和admin同时热更，所以端口不确定谁是谁，不用写server端口
     build: {
       rollupOptions: {
         input: {
