@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Form, Input, Space } from 'antd'
 import { useNavigate } from 'react-router-dom'
-import { useRequest } from '@api/index'
-import { apiRegister } from '@api/admin'
+import { useRequest, useMyHttpRequest } from '@api/index'
+import { apiUpdateAdmin } from '@api/admin'
 import { useMessage } from '../../components/message'
 
 type Form = {
   username: string
   password: string
 }
-const Register: React.FC = () => {
+const UpdateAdmin: React.FC = () => {
   const navigate = useNavigate()
-  const [registering, register] = useRequest(apiRegister)
+  const { runAsync: update } = useMyHttpRequest(apiUpdateAdmin)
   const [info, contextHolder] = useMessage()
   const [msg, setMsg] = useState('')
 
@@ -21,8 +21,8 @@ const Register: React.FC = () => {
 
   const onFinish = async (values: Form) => {
     const { username, password } = values
-    const res = await register(username, password)
-    setMsg(res.message)
+    const res = await update(username, password)
+    setMsg(res.data.message)
     navigate('/login')
   }
 
@@ -69,7 +69,7 @@ const Register: React.FC = () => {
         <Form.Item>
           <Space>
             <Button type="primary" htmlType="submit">
-              Register
+              Update
             </Button>
             <Button
               type="primary"
@@ -85,4 +85,4 @@ const Register: React.FC = () => {
   )
 }
 
-export default Register
+export default UpdateAdmin

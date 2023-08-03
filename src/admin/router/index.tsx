@@ -4,6 +4,8 @@ import { BrowserRouter, Navigate, Outlet, Route, RouteObject, useRoutes } from '
 import { RouterBeforeEach } from './AuthRoute'
 
 const Login = lazy(() => import('../pages/Login'))
+const Register = lazy(() => import('../pages/Login/register'))
+const UpdateAdmin = lazy(() => import('../pages/Login/updateAdmin'))
 const Admin = lazy(() => import('../pages/Admin'))
 const ArticleList = lazy(() => import('../pages/Article/list'))
 const AddArticle = lazy(() => import('../pages/Article/AddArticle'))
@@ -41,11 +43,14 @@ const config: RouteObject[] = [
     path: '/login',
     element: lazySuspense(<Login />),
   },
-  /**出于安全 不再需要注册admin */
-  // {
-  //   path: '/register',
-  //   element: lazySuspense(<Register />),
-  // },
+  {
+    path: '/register',
+    element: lazySuspense(<Register />),
+  },
+  {
+    path: '/updateAdmin',
+    element: lazySuspense(<UpdateAdmin />),
+  },
   {
     path: '/admin',
     element: lazySuspense(<Admin />),

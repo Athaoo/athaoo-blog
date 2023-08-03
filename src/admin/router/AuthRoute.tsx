@@ -13,7 +13,7 @@ export const RouterBeforeEach = ({ children }: { children: React.ReactNode }) =>
     } else {
       return <>{children}</>
     }
-  } else if (location.pathname !== '/register') {
+  } else if (location.pathname !== '/register' && location.pathname !== '/updateAdmin') {
     if (!ifLogin) {
       return <Navigate to="/login" />
     } else if (ifLogin) {

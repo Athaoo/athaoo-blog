@@ -68,6 +68,16 @@ export const apiRegister = async (
   })
 }
 
+export const apiUpdateAdmin = async (
+  username: string,
+  password: string
+): Promise<AxiosResponse<MySuccessRes>> => {
+  return await instance.put<MySuccessRes>('/admin', {
+    username,
+    password,
+  })
+}
+
 export const createArticle = async (data: AddArticleType): Promise<AxiosResponse<MySuccessRes>> => {
   const formData = new FormData()
   formData.append('title', data.title)
