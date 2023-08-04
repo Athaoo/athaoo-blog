@@ -29,7 +29,7 @@
       "@containers/*": ["./src/containers/*"],
       "@assets/*": ["./src/assets/*"],
       "@types/*": ["./src/types/*"],
-      "@components/*": ["./src/types/*"]
+      "@components/*": ["./src/components/*"]
     }
   },
   "include": ["./src/**/*", "./node_modules", "env.d.ts"],

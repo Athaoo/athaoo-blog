@@ -28,7 +28,7 @@ const App: React.FC = () => {
           <div>
             <RouterRoot></RouterRoot>
           </div>
-          <Footer style={{ background: token.colorBgContainer, textAlign: 'center' }}>
+          <Footer className="h-64 text-center" style={{ background: token.colorBgContainer }}>
             Athaoo 2023
           </Footer>
         </main>

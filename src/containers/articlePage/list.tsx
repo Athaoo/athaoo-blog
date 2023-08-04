@@ -13,7 +13,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import '@src/styles/tailwind.css'
 import { useRequest, getAllArticles, useMyHttpRequest } from '@src/api'
 import type { Article, ArticleListQueryType } from '@src/api/types'
-import MyCard from './ArticleCard'
+import MyCard from '@src/components/card'
 
 // const LAZY_STEP = 2
 const LAZY_STEP = 6
