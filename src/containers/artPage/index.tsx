@@ -21,6 +21,7 @@ const subReactRoutes: page[] = [
   { id: '2', path: 'react/hooks1', name: 'hooks1' },
   { id: '3', path: 'react/testHooks2', name: 'testHooks2' },
   { id: '4', path: 'react/vList', name: 'vList' },
+  { id: '5', path: 'react/iframeTest', name: 'iframeTest' },
 ]
 
 const sideMenuItems: MenuProps['items'] = [

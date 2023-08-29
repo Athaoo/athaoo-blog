@@ -16,6 +16,7 @@ const Pcd1 = lazy(() => import('@src/containers/arts/scenes3d/pcd1'))
 const Hooks1 = lazy(() => import('@src/containers/arts/reactTest/hooks1'))
 const TestHooks2 = lazy(() => import('@src/containers/arts/reactTest/testHooks2'))
 const VList = lazy(() => import('@src/containers/arts/reactTest/vList'))
+const IframeTest = lazy(() => import('@src/containers/arts/reactTest/iframeTest'))
 
 export const lazySuspense = (component: React.ReactElement) => {
   return <Suspense fallback={<></>}>{component}</Suspense>
@@ -99,6 +100,10 @@ const config: RouteObject[] = [
           {
             path: 'vList',
             element: <VList />,
+          },
+          {
+            path: 'iframeTest',
+            element: <IframeTest />,
           },
         ],
       },
