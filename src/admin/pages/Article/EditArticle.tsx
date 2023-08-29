@@ -17,7 +17,7 @@ const EditArticle = () => {
     return {
       ...article,
       tags: article.tags.reduce((res, tag) => (res == '' ? tag : `${res},${tag}`), ''),
-      content: JSON.parse(article.content),
+      content: article.content,
     }
   }
   useEffect(() => {
@@ -32,7 +32,7 @@ const EditArticle = () => {
   const onSubmit = async (article: ArticleForm) => {
     const updateParam = {
       ...article,
-      content: JSON.stringify(article.content),
+      content: article.content,
       tags: JSON.stringify(article.tags.split(',').map((tag) => tag.trim())),
     }
 

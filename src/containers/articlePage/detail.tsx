@@ -92,7 +92,7 @@ const ArticleDetail: React.FC = () => {
         {Tags(article.tags)}
       </Card>
       <Card style={{ boxShadow: 'none' }} bordered={false}>
-        <MDViewer value={JSON.parse(article.content)} />
+        <MDViewer value={article.content} />
       </Card>
     </Card>
   )

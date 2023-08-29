@@ -9,7 +9,14 @@ import breaks from '@bytemd/plugin-breaks'
 import 'bytemd/dist/index.css'
 import 'highlight.js/styles/atom-one-dark.css'
 
-const plugins = [gfm(), highlight(), frontmatter(), gemoji(), breaks()]
+const plugins0 = [gfm(), highlight(), frontmatter(), gemoji(), breaks()]
+const plugins1 = [gfm(), highlight(), frontmatter(), gemoji()]
+const plugins2 = [gfm(), highlight(), frontmatter()]
+const plugins3 = [gfm(), highlight()]
+const plugins4 = [gfm(), frontmatter(), breaks()]
+const plugins5 = [frontmatter(), breaks()]
+
+const plugins = plugins0
 
 export const MDEditor = (props: EditorProps) => {
   return <Editor {...props} plugins={plugins} />
