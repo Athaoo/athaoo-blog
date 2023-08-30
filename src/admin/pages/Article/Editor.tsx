@@ -4,7 +4,7 @@ import { Card, Input, Button, Form, FormProps, Upload } from 'antd'
 import type { RcFile, UploadFile, UploadProps } from 'antd/es/upload'
 import { RenderTest } from '../../components/renderTest'
 
-import { MDEditor, MDViewer } from '@src/admin/components/markdown'
+import { MDEditor } from '@src/admin/components/markdown'
 
 export type ArticleForm = {
   title: string

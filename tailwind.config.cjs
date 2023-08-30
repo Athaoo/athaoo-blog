@@ -10,6 +10,10 @@ module.exports = {
       transitionProperty: {
         colors: 'background-color', // 启用背景颜色过渡
       },
+      padding: {
+        '20per': '20%',
+        '40per': '40%',
+      },
     },
   },
   plugins: [],

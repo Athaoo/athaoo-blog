@@ -55,11 +55,8 @@ const ArtPage = () => {
   const token = useToken().token
   return (
     <Row
+      className="p-0 pt-8 w-full min-h-screen"
       style={{
-        padding: '0',
-        paddingTop: '32px',
-        height: '100%',
-        width: '100%',
         background: token.colorBgContainer,
       }}>
       <Col span={4}>

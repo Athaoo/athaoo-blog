@@ -1,6 +1,7 @@
 import React from 'react'
-import { Tooltip, theme } from 'antd'
+import { Tooltip } from 'antd'
 import { formatDate } from '@src/utils/format'
+import { useToken } from '@src/theme'
 
 type MyCardProps = {
   title: string
@@ -13,14 +14,13 @@ type MyCardProps = {
 
 const defaultBg = 'http://154.8.162.201:80/static/files/default-bg.png'
 
-const { useToken } = theme
 const MyCard = ({ title, summary, tags, time, cover, onClick }: MyCardProps) => {
-  const { token } = useToken()
+  const token = useToken()
   return (
     <Tooltip title={title} autoAdjustOverflow={false}>
       <div
         className="group flex flex-col group relative rounded-2xl h-full w-full p-0 transform transition-all duration-300 "
-        style={{ background: token.colorBgContainer }}>
+        style={{ background: token.colorBgElevated }}>
         <div className="w-full h-full rounded-2xl overflow-hidden shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1">
           {/* trick: height0 + padding-bottom可以保持比例 */}
           <div className="w-full h-0 pb-[48%] relative cursor-pointer" onClick={onClick}>
@@ -31,17 +31,15 @@ const MyCard = ({ title, summary, tags, time, cover, onClick }: MyCardProps) => 
               alt="Card Image"
             />
           </div>
-          <div
-            className="flex flex-1 flex-col pl-8 "
-            style={{ background: token.colorBgContainer }}>
+          <div className="flex flex-1 flex-col pl-8 " style={{ background: token.colorBgElevated }}>
             <div className="flex-1 w-full h-32 pt-8">
               <h2 className="text-xl font-semibold mb-2">{title}</h2>
             </div>
             <div className="flex-1 w-full">
-              <p className="text-gray-600">{summary}</p>
+              <p style={{ color: token.colorTextDescription }}>{summary}</p>
             </div>
             <div className="flex-1 w-full">
-              <p className="text-gray-600">{formatDate(time)}</p>
+              <p style={{ color: token.colorTextDescription }}>{formatDate(time)}</p>
             </div>
             <div className="w-full h-16">
               <div className="flex space-x-2">

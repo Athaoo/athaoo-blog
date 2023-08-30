@@ -19,16 +19,16 @@ const App: React.FC = () => {
   const scrollContainerRef = useRef(null)
 
   return (
-    <Row className="transition duration-300 overflow-x-hidden h-full w-full">
+    <Row
+      className="transition duration-300 overflow-x-hidden h-full w-full"
+      style={{ background: token.colorBgContainer }}>
       <Col ref={scrollContainerRef} className="w-full h-full overflow-y-auto" span={24}>
         <MyHeader defaultSelectedKey={''}></MyHeader>
         <main
-          className="overflow-x-hidden overflow-y-visible h-fit"
-          style={{ background: token.colorBgContainer, minHeight: 'calc(100% - 64px)' }}>
-          <div>
-            <RouterRoot></RouterRoot>
-          </div>
-          <Footer className="h-64 text-center" style={{ background: token.colorBgContainer }}>
+          className="overflow-x-hidden overflow-y-visible"
+          style={{ background: token.colorBgLayout, minHeight: 'calc(100% - 64px)' }}>
+          <RouterRoot></RouterRoot>
+          <Footer className="h-64 text-center" style={{ background: token.colorBgElevated }}>
             Athaoo 2023
           </Footer>
         </main>

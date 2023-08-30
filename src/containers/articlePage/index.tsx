@@ -10,9 +10,10 @@ const ArticlePage = () => {
 
   return (
     <div
-      className="h-full"
+      className="h-full lg:px-20per md:px-0"
       style={{
         background: token.colorBgContainer,
+        minHeight: 960,
       }}>
       <div>{lazySuspense(<Outlet />)}</div>
     </div>

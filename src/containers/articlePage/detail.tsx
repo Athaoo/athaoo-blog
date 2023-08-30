@@ -4,10 +4,9 @@ import { Button, Card, Tag, Typography, Row, Col, Spin } from 'antd'
 import MarkdownRenderer from '@src/components/markdownRenderer'
 import { MDViewer } from '@src/admin/components/markdown'
 import { formatDate } from '@src/utils/format'
-
 import { useRequest, getOneArticle } from '@src/api'
-
 import type { Article } from '@src/api/types'
+import { useToken } from '@src/theme'
 
 const { Title, Text } = Typography
 
@@ -72,6 +71,7 @@ const ArticleDetail: React.FC = () => {
   const { id } = useParams()
   const [article, setArticle] = useState<Article>(null)
   const [loading, apiGetArticle] = useRequest(getOneArticle)
+  const token = useToken()
 
   useEffect(() => {
     const get = async () => {
@@ -91,9 +91,10 @@ const ArticleDetail: React.FC = () => {
       <Card style={{ boxShadow: 'none' }} bordered={false}>
         {Tags(article.tags)}
       </Card>
-      <Card style={{ boxShadow: 'none' }} bordered={false}>
+      {/* <div style={{ color: token.colorTextDescription }}> */}
+      <div>
         <MDViewer value={article.content} />
-      </Card>
+      </div>
     </Card>
   )
 }

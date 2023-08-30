@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react'
+import { theme } from 'antd'
 
 interface ThemeContextValue {
   isDark: boolean
@@ -27,4 +28,10 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   }
 
   return <ThemeContext.Provider value={{ isDark, toggleTheme }}>{children}</ThemeContext.Provider>
+}
+
+export const useToken = () => {
+  const { token } = theme.useToken()
+
+  return token
 }

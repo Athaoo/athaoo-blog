@@ -99,7 +99,7 @@ const BlogList: React.FC = () => {
   return !articles && loading ? (
     <Spin />
   ) : (
-    <Card style={{ height: '100%' }}>
+    <Card className="h-full">
       <CardList articles={articles} />
       {ifLoadOver.current ? null : <Button onClick={() => loadMore()}>加载更多</Button>}
     </Card>
