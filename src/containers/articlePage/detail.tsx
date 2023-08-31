@@ -91,8 +91,7 @@ const ArticleDetail: React.FC = () => {
       <Card style={{ boxShadow: 'none' }} bordered={false}>
         {Tags(article.tags)}
       </Card>
-      {/* <div style={{ color: token.colorTextDescription }}> */}
-      <div>
+      <div style={{ color: token.colorText }}>
         <MDViewer value={article.content} />
       </div>
     </Card>
