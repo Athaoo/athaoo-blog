@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tooltip } from 'antd'
+import { Tooltip, Typography } from 'antd'
 import { formatDate } from '@src/utils/format'
 import { useToken } from '@src/theme'
 
@@ -31,9 +31,11 @@ const MyCard = ({ title, summary, tags, time, cover, onClick }: MyCardProps) => 
               alt="Card Image"
             />
           </div>
-          <div className="flex flex-1 flex-col pl-8 " style={{ background: token.colorBgElevated }}>
+          <div className="flex flex-1 flex-col pl-8 ">
             <div className="flex-1 w-full h-32 pt-8">
-              <h2 className="text-xl font-semibold mb-2">{title}</h2>
+              <Typography.Title level={3} className="text-xl font-semibold mb-2">
+                {title}
+              </Typography.Title>
             </div>
             <div className="flex-1 w-full">
               <p style={{ color: token.colorTextDescription }}>{summary}</p>

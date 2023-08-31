@@ -12,7 +12,8 @@ export default defineConfig(({ command, mode }) => {
       __APP_ENV__: {
         API_URL: env.VITE_API_URL,
         BLOG_URL: env.VITE_BLOG_URL,
-        VITE_ADMIN_URL: env.VITE_ADMIN_URL,
+        ADMIN_URL: env.VITE_ADMIN_URL,
+        DEFAULT_BG_URL: env.VITE_DEFAULT_BG_URL,
       },
     },
     resolve: {

@@ -14,6 +14,7 @@ import '@src/styles/tailwind.css'
 import { useRequest, getAllArticles, useMyHttpRequest } from '@src/api'
 import type { Article, ArticleListQueryType } from '@src/api/types'
 import MyCard from '@src/components/card'
+import { useToken } from '@src/theme'
 
 // const LAZY_STEP = 2
 const LAZY_STEP = 6
@@ -60,6 +61,7 @@ const BlogList: React.FC = () => {
   const ifInited = useRef(false)
   const ifLoadOver = useRef(false)
   const [page, setPage] = useState(1)
+  const token = useToken()
 
   const loadMore = useCallback(() => {
     setPage((p) => p + 1)
@@ -99,10 +101,10 @@ const BlogList: React.FC = () => {
   return !articles && loading ? (
     <Spin />
   ) : (
-    <Card className="h-full">
+    <div className="h-full lg:px-20per md:px-0" style={{ background: token.colorBgLayout }}>
       <CardList articles={articles} />
       {ifLoadOver.current ? null : <Button onClick={() => loadMore()}>加载更多</Button>}
-    </Card>
+    </div>
   )
 }
 

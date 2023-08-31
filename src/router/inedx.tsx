@@ -35,7 +35,7 @@ const config: RouteObject[] = [
   },
   {
     path: '/admin',
-    element: <Navigate to="/admin.html" />,
+    element: <Navigate replace={true} to="/admin.html" />,
   },
   {
     path: '/article',

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Button, Card, Tag, Typography, Row, Col, Spin } from 'antd'
 import MarkdownRenderer from '@src/components/markdownRenderer'
@@ -6,16 +6,10 @@ import { MDViewer } from '@src/admin/components/markdown'
 import { formatDate } from '@src/utils/format'
 import { useRequest, getOneArticle } from '@src/api'
 import type { Article } from '@src/api/types'
+import BackBtn from './backBtn'
 import { useToken } from '@src/theme'
 
 const { Title, Text } = Typography
-
-const ColClass = {
-  display: 'flex',
-  height: '100%',
-  justifyContent: 'center',
-  alignItems: 'center',
-}
 
 const Tags = (tags) => {
   const tagColors = ['megenta', 'red', 'volcano', 'orange', 'lime', 'green', 'cyan', 'geekblue']
@@ -30,20 +24,7 @@ const Tags = (tags) => {
     </Button>
   ))
 
-  return (
-    <Row justify={'space-between'}>
-      <Col span={24} style={ColClass}>
-        {MyTags}
-      </Col>
-    </Row>
-  )
-}
-const BackBtn = () => {
-  const navigate = useNavigate()
-  const back = () => {
-    navigate('/article')
-  }
-  return <Button onClick={back}>返回首页</Button>
+  return <div>{MyTags}</div>
 }
 
 type HedaerProps = {
@@ -51,19 +32,27 @@ type HedaerProps = {
 }
 const Header: React.FC<HedaerProps> = ({ data }) => {
   return (
-    <Row justify={'space-between'} style={{ height: '100%' }}>
-      <Col style={ColClass}>
+    <div className="flex flex-col w-full h-full mb-16">
+      <div className="h-4 mt-16">
         <BackBtn />
-      </Col>
-      <Col style={ColClass}>
-        <Title level={4} style={{ margin: 'auto' }}>
-          {data.title}
-        </Title>
-      </Col>
-      <Col style={ColClass}>
-        <Text>{formatDate(data.createdAt)}</Text>
-      </Col>
-    </Row>
+      </div>
+      <div className="pt-16">
+        <Title level={1}>{data.title}</Title>
+      </div>
+      <div>
+        <Text type="secondary" style={{ fontSize: 22 }}>
+          {formatDate(data.createdAt)}
+        </Text>
+      </div>
+      <div className="pt-8">{Tags(data.tags)}</div>
+      <div className="relative md:-ml-5per mt-16 md:w-11/10 sm:ml-0 sm:w-4/5 h-0 pb-[60%] shadow-lg rounded-md overflow-hidden">
+        <img
+          src={data.cover ? data.cover : __APP_ENV__.DEFAULT_BG_URL}
+          className="absolute w-full h-full object-cover"
+          alt="Card Image"
+        />
+      </div>
+    </div>
   )
 }
 
@@ -84,17 +73,12 @@ const ArticleDetail: React.FC = () => {
   return loading ? (
     <Spin />
   ) : (
-    <Card>
+    <div className="lg:px-25per md:px-0" style={{ background: token.colorBgLayout }}>
       <Card style={{ boxShadow: 'none' }} bordered={false}>
         <Header data={article} />
-      </Card>
-      <Card style={{ boxShadow: 'none' }} bordered={false}>
-        {Tags(article.tags)}
-      </Card>
-      <div style={{ color: token.colorText }}>
         <MDViewer value={article.content} />
-      </div>
-    </Card>
+      </Card>
+    </div>
   )
 }
 

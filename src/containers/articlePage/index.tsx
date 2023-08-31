@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import { theme, Row, Col } from 'antd'
+import { theme, FloatButton } from 'antd'
 import { lazySuspense } from '@src/router/inedx'
 import '@src/styles/tailwind.css'
 
@@ -10,12 +10,13 @@ const ArticlePage = () => {
 
   return (
     <div
-      className="h-full lg:px-20per md:px-0"
+      className="h-full my-16"
       style={{
-        background: token.colorBgContainer,
-        minHeight: 960,
+        minHeight: '960px',
+        background: token.colorBgElevated,
       }}>
-      <div>{lazySuspense(<Outlet />)}</div>
+      {lazySuspense(<Outlet />)}
+      <FloatButton.BackTop />
     </div>
   )
 }

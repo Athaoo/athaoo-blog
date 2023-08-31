@@ -15,9 +15,6 @@ import { useTheme } from '@src/theme'
 
 const ThemeContainer = ({ children }) => {
   const { isDark } = useTheme()
-  lightStyles
-  console.log(`🚀 -> ThemeContainer -> lightStyles:`, lightStyles)
-  console.log(`🚀 -> ThemeContainer -> darkStyles:`, darkStyles)
 
   return (
     // <div>

@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { BrowserRouter } from 'react-router-dom'
-
-import { Layout, Row, Col, App as AntdApp } from 'antd'
+import React, { useRef } from 'react'
+import { Layout, Row, Col, Divider } from 'antd'
 import { theme } from 'antd'
 
 import { RouterRoot } from '@src/router/inedx'
@@ -27,8 +25,11 @@ const App: React.FC = () => {
         <main
           className="overflow-x-hidden overflow-y-visible"
           style={{ background: token.colorBgLayout, minHeight: 'calc(100% - 64px)' }}>
-          <RouterRoot></RouterRoot>
-          <Footer className="h-64 text-center" style={{ background: token.colorBgElevated }}>
+          <div style={{ minHeight: '960px' }}>
+            <RouterRoot></RouterRoot>
+          </div>
+          <Divider className="my-0"></Divider>
+          <Footer className="h-16 text-center" style={{ background: token.colorBgLayout }}>
             Athaoo 2023
           </Footer>
         </main>
