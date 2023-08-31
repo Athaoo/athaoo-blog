@@ -81,7 +81,7 @@ const ArticleList = () => {
   }, [])
 
   return (
-    <Card style={{ height: '100%' }}>
+    <Card className="flex-1">
       {isLoading ? <Spin /> : <Table columns={columns} dataSource={articles} rowKey="id" />}
     </Card>
   )

@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "vite serve src --mode development --config ./vite.config.ts",
     "dev:test": "vite serve src --mode test --config ./vite.config.ts",
+    "dev:prod": "vite serve src --mode production --config ./vite.config.ts",
     "build": "vite build --mode production src --config ./vite.config.ts",
     "analyzer": "cross-env Analyzer=on npm run build && webpack-bundle-analyzer --port 8888 ./dist/analyzer.json",
     "watch: css": "postcss src/assets/styles/tailwindcss.css -o src/assets/styles/main.css"
