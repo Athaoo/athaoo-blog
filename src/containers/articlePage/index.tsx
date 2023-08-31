@@ -10,7 +10,7 @@ const ArticlePage = () => {
 
   return (
     <div
-      className="h-full my-16"
+      className="flex flex-col my-16"
       style={{
         minHeight: '960px',
         background: token.colorBgElevated,

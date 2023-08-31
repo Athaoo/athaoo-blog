@@ -99,7 +99,7 @@ const BlogList: React.FC = () => {
   }, [page])
 
   return !articles && loading ? (
-    <Spin />
+    <></>
   ) : (
     <div className="h-full lg:px-20per md:px-0" style={{ background: token.colorBgLayout }}>
       <CardList articles={articles} />
