@@ -14,6 +14,7 @@ export default defineConfig(({ command, mode }) => {
         BLOG_URL: env.VITE_BLOG_URL,
         ADMIN_URL: env.VITE_ADMIN_URL,
         DEFAULT_BG_URL: env.VITE_DEFAULT_BG_URL,
+        ROUTER_BASE: env.VITE_ROUTER_BASE,
       },
     },
     resolve: {
@@ -35,8 +36,10 @@ export default defineConfig(({ command, mode }) => {
         },
       },
       outDir: resolve(__dirname, './dist'),
+      emptyOutDir: true, //清空dist
     },
     plugins: [react()],
     publicDir: resolve(__dirname, './public'),
+    base: env.VITE_ROUTER_BASE ?? '',
   }
 })

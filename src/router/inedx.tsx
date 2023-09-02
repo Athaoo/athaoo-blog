@@ -34,10 +34,6 @@ const config: RouteObject[] = [
     element: <Navigate to="/article" />,
   },
   {
-    path: '/admin',
-    element: <Navigate replace={true} to="/admin.html" />,
-  },
-  {
     path: '/article',
     element: lazySuspense(<ArticlePage />),
     children: [

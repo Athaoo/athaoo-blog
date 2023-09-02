@@ -3,4 +3,5 @@ declare const __APP_ENV__: {
   BLOG_URL: string
   ADMIN_URL: string
   DEFAULT_BG_URL: string
+  ROUTER_BASE: string
 }
