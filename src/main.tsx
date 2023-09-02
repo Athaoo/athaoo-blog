@@ -33,7 +33,7 @@ const Root: React.FC = () => {
 }
 
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename={__APP_ENV__.ROUTER_BASE}>
     <ThemeProvider>
       <Root />
     </ThemeProvider>
