@@ -12,7 +12,7 @@ const App = () => {
   }, [])
 
   const onClick = (e) => {
-    const json = JSON.stringify(content)
+    const json = content
     console.log(json)
   }
   return (
