@@ -25,7 +25,7 @@ const App: React.FC = () => {
         <main
           className="overflow-x-hidden overflow-y-visible"
           style={{ background: token.colorBgLayout, minHeight: 'calc(100% - 64px)' }}>
-          <div style={{ minHeight: '960px' }}>
+          <div style={{ minHeight: '100vh' }}>
             <RouterRoot></RouterRoot>
           </div>
           <Divider className="my-0"></Divider>

@@ -101,7 +101,9 @@ const BlogList: React.FC = () => {
   return !articles && loading ? (
     <></>
   ) : (
-    <div className="h-full lg:px-20per md:px-0" style={{ background: token.colorBgLayout }}>
+    <div
+      className="h-full lg:px-20per md:px-10per sm:px-5per"
+      style={{ background: token.colorBgLayout }}>
       <CardList articles={articles} />
       {ifLoadOver.current ? null : <Button onClick={() => loadMore()}>加载更多</Button>}
     </div>
