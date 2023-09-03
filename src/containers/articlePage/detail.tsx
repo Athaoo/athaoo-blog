@@ -1,7 +1,6 @@
 import React, { memo, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Button, Card, Tag, Typography, Row, Col, Spin } from 'antd'
-import MarkdownRenderer from '@src/components/markdownRenderer'
 import { MDViewer } from '@src/admin/components/markdown'
 import { formatDate } from '@src/utils/format'
 import { useRequest, getOneArticle } from '@src/api'
