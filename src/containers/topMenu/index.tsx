@@ -48,19 +48,19 @@ const MyHeader: React.FC<HeaderProps> = ({ defaultSelectedKey }) => {
     <Header
       className="header sticky top-0 pd-0 z-10 drop-shadow-sm"
       style={{ background: token.colorBgContainer }}>
-      <div className="flex flex-row justify-between h-full w-full">
-        <Menu
-          style={MenuClass}
-          className="flex-1"
-          mode="horizontal"
-          defaultSelectedKeys={[defaultSelectedKey]}
-          items={MenuItems}></Menu>
-        <div className="absolute right-0 h-full w-36 ">
+      <div className="relative flex flex-row-reverse h-full w-full">
+        <div className="h-full w-36 ">
           <Space>
             <ThemeToggler />
             <GithubBtn />
           </Space>
         </div>
+        <Menu
+          style={MenuClass}
+          className=""
+          mode="horizontal"
+          defaultSelectedKeys={[defaultSelectedKey]}
+          items={MenuItems}></Menu>
       </div>
     </Header>
   )

@@ -11,6 +11,8 @@ module.exports = {
         colors: 'background-color', // 启用背景颜色过渡
       },
       padding: {
+        '5per': '5%',
+        '10per': '10%',
         '20per': '20%',
         '25per': '25%',
         '30per': '30%',

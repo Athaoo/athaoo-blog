@@ -1,24 +1,10 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import { theme, FloatButton } from 'antd'
 import { lazySuspense } from '@src/router/inedx'
 import '@src/styles/tailwind.css'
 
-const { useToken } = theme
 const ArticlePage = () => {
-  const { token } = useToken()
-
-  return (
-    <div
-      className="flex flex-col my-16"
-      style={{
-        minHeight: '960px',
-        background: token.colorBgElevated,
-      }}>
-      {lazySuspense(<Outlet />)}
-      <FloatButton.BackTop />
-    </div>
-  )
+  return <div className="flex flex-col my-16">{lazySuspense(<Outlet />)}</div>
 }
 
 export default ArticlePage
