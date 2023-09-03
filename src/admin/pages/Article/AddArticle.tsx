@@ -18,7 +18,7 @@ const App = () => {
     const tagsArray = values.tags.split(',').map((tag: string) => tag.trim())
     const article = {
       ...values,
-      content: JSON.stringify(values.content),
+      content: values.content,
       tags: JSON.stringify(tagsArray),
     } as AddArticleType
     const response = await addArticle(article)
