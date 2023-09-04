@@ -54,13 +54,11 @@ export const getAllArticles = async (
   query?: ArticleListQueryType
 ): Promise<AxiosResponse<Article[]>> => {
   const params = {} as any
-  //query?.condition ? params.condition = JSON.stringify(query?.condition) : null
-  params.condition = JSON.stringify({
-    // tags: ['test'],
-  })
+  params.condition = JSON.stringify({})
   params.pageLimit = query?.pageLimit ?? null
   params.pageNum = typeof query?.pageNum == 'number' && query?.pageNum >= 0 ? query?.pageNum : null
-  params.orderBy = query?.orderBy ?? null
+  params.orderBy = query?.orderBy ?? 'createdAt'
+  params.isDesc = query?.isDesc ?? true
 
   return await instance.get<Article[]>('/public/article', { params })
 }

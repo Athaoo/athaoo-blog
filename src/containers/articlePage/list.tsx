@@ -61,7 +61,12 @@ const BlogList: React.FC = () => {
   useEffect(() => {
     const req = async () => {
       try {
-        const { data } = await getArticles({ pageLimit: LAZY_STEP * 2, pageNum: 0 })
+        const { data } = await getArticles({
+          pageLimit: LAZY_STEP * 2,
+          pageNum: 0,
+          isDesc: true,
+          orderBy: 'createdAt',
+        })
         setArticles(data)
 
         ifInited.current = true

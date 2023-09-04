@@ -5,6 +5,7 @@ import type { Article } from '@api/types'
 import { useRequest } from '@api/index'
 import { getAllArticles, deleteOneArticle } from '@api/admin'
 import { formatDate } from '@utils/format'
+import { isArray } from 'lodash-es'
 
 const DeleteConfirm = ({ text, id }: { text: string; id: number }) => {
   const [isLoading, reqDelete] = useRequest(deleteOneArticle)
@@ -49,11 +50,13 @@ const columns = [
     dataIndex: 'tags',
     render: (text, record: Article) => (
       <>
-        {record.tags.map((tag) => (
-          <Tag color="blue" key={tag}>
-            {tag}
-          </Tag>
-        ))}
+        {isArray(record.tags) && record.tags.length
+          ? record.tags.map((tag) => (
+              <Tag color="blue" key={tag}>
+                {tag}
+              </Tag>
+            ))
+          : []}
       </>
     ),
   },
