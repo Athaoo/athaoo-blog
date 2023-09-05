@@ -1,18 +1,9 @@
-import React, {
-  useEffect,
-  useCallback,
-  memo,
-  useMemo,
-  useState,
-  useLayoutEffect,
-  useReducer,
-  useRef,
-} from 'react'
-import { Table, Tag, Dropdown, Menu, Button, Popconfirm, Card, Spin, Skeleton } from 'antd'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useEffect, useCallback, memo, useState, useRef } from 'react'
+import { Button } from 'antd'
+import { useNavigate } from 'react-router-dom'
 import '@src/styles/tailwind.css'
-import { useRequest, getAllArticles, useMyHttpRequest } from '@src/api'
-import type { Article, ArticleListQueryType } from '@src/api/types'
+import { getAllArticles, useMyHttpRequest } from '@src/api'
+import type { Article } from '@src/api/types'
 import MyCard from '@src/components/card'
 import { useToken } from '@src/theme'
 
