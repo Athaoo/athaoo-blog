@@ -8,13 +8,7 @@ const onclick = () => {
 }
 
 const ThemeToggler: React.FC = () => {
-  return (
-    <Space>
-      <Tooltip title="github">
-        <Button shape="circle" onClick={onclick} icon={<GithubOutlined />}></Button>
-      </Tooltip>
-    </Space>
-  )
+  return <Button shape="circle" onClick={onclick} icon={<GithubOutlined />}></Button>
 }
 
 export default ThemeToggler

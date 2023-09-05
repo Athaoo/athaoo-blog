@@ -8,9 +8,7 @@ const GithubBtn: React.FC = () => {
 
   return (
     <Space>
-      <Tooltip title="明暗切换">
-        <Button shape="circle" onClick={toggleTheme} icon={<BulbOutlined />}></Button>
-      </Tooltip>
+      <Button shape="circle" onClick={toggleTheme} icon={<BulbOutlined />}></Button>
     </Space>
   )
 }

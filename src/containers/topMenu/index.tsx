@@ -9,11 +9,11 @@ import '@src/styles/tailwind.css'
 const MenuRouteName = [
   {
     route: 'article',
-    label: '奥利安费',
+    label: 'blog',
   },
   {
     route: 'art',
-    label: '阿米诺手',
+    label: 'demos',
   },
 ]
 const { useToken } = theme
