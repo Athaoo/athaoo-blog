@@ -1,18 +1,13 @@
-// routes.ts
-import { Spin } from 'antd'
-import React, { lazy, Suspense, useMemo } from 'react'
-import { RouteObject, useRoutes, Navigate, Outlet, useRouteError } from 'react-router-dom'
-import { ReactChildrenProps } from '../types/types'
+import React, { lazy, Suspense } from 'react'
+import { RouteObject, useRoutes, Navigate, Outlet } from 'react-router-dom'
 
 const ArtPage = lazy(() => import('@src/containers/artPage'))
 const ArticlePage = lazy(() => import('@src/containers/articlePage'))
 const SceneContainer = lazy(() => import('@src/containers/arts/scenes3d'))
 const ArticleList = lazy(() => import('@src/containers/articlePage/list'))
 const ArticleDetail = lazy(() => import('@src/containers/articlePage/detail'))
-const MyEditor = lazy(() => import('@src/containers/arts/markdown'))
-const RotateBox = lazy(() => import('@src/containers/arts/scenes3d/rotateBox'))
+const DnfCustom = lazy(() => import('@src/containers/arts/dnfCustom'))
 const RotateBox2 = lazy(() => import('@src/containers/arts/scenes3d/rotateBox2'))
-const Pcd1 = lazy(() => import('@src/containers/arts/scenes3d/pcd1'))
 const Hooks1 = lazy(() => import('@src/containers/arts/reactTest/hooks1'))
 const TestHooks2 = lazy(() => import('@src/containers/arts/reactTest/testHooks2'))
 const VList = lazy(() => import('@src/containers/arts/reactTest/vList'))
@@ -61,19 +56,11 @@ const config: RouteObject[] = [
         children: [
           {
             path: '',
-            element: <Navigate to="rotateBox" />,
-          },
-          {
-            path: 'rotateBox',
-            element: <RotateBox />,
+            element: <Navigate to="rotateBox2" />,
           },
           {
             path: 'rotateBox2',
             element: <RotateBox2 />,
-          },
-          {
-            path: 'pcd1',
-            element: <Pcd1 />,
           },
         ],
       },
@@ -83,11 +70,11 @@ const config: RouteObject[] = [
         children: [
           {
             path: '',
-            element: <MyEditor />,
+            element: <DnfCustom />,
           },
           {
-            path: 'markdown',
-            element: <MyEditor />,
+            path: 'dnfCustom',
+            element: <DnfCustom />,
           },
           {
             path: 'hooks1',

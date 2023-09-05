@@ -11,13 +11,9 @@ type page = {
   name: string
 }
 
-const sub3dRoutes: page[] = [
-  { id: '1', path: '3d/rotateBox', name: '旋转盒子' },
-  { id: '2', path: '3d/rotateBox2', name: '旋转盒子hook版' },
-  { id: '3', path: '3d/pcd1', name: '点云' },
-]
+const sub3dRoutes: page[] = [{ id: '2', path: '3d/rotateBox2', name: '旋转盒子' }]
 const subReactRoutes: page[] = [
-  { id: '1', path: 'react/markdown', name: 'markdown' },
+  { id: '1', path: 'react/dnfCustom', name: 'dnf自定义装备' },
   { id: '2', path: 'react/hooks1', name: 'hooks1' },
   { id: '3', path: 'react/testHooks2', name: 'testHooks2' },
   { id: '4', path: 'react/vList', name: 'vList' },

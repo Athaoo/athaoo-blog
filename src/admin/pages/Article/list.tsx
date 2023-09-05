@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Table, Tag, Popconfirm, Card, Spin, message } from 'antd'
 import { Link } from 'react-router-dom'
 import type { Article } from '@api/types'
 import { useRequest } from '@api/index'
 import { getAllArticles, deleteOneArticle } from '@api/admin'
-import { useMessage } from '../../components/message'
 import { formatDate } from '@utils/format'
 
 const DeleteConfirm = ({ text, id }: { text: string; id: number }) => {
