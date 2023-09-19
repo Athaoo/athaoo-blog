@@ -7,6 +7,9 @@ yarn-error.log*
 yarn.lock
 package-lock.json
 
+# rollup plugin
+stats.html
+
 # Editor directories and files
 .idea
 .vscode
