@@ -46,20 +46,27 @@ export function generateRandomTreeListData(length: number, maxDepth: number) {
   return data
 }
 
-function calculateTotalNodes(data) {
-  if (!data || data.length === 0) {
-    return 0
-  }
+export function flatVTreeListData(data: TreeListNode[]) {
+  const res = []
+  if (!data?.length) return res
+  const keyCache = new Set()
 
-  let totalNodes = 0
+  // dfs 先序遍历
+  for (let i = 0; i < data.length; i++) {
+    const stack = [{ ...data[i], level: 0 }]
+    while (stack.length) {
+      const cur = stack.pop()
 
-  for (const item of data) {
-    totalNodes++ // 每个节点都增加 1
+      // 为了先序，需要反向将children入栈，以确保首个children第一个出栈，同时记录树层级level
+      if (cur?.children?.length) {
+        for (let j = cur.children.length - 1; j >= 0; j--) {
+          const child = cur.children[j]
+          stack.push({ ...child, level: cur.level + 1 })
+        }
+      }
 
-    if (item.children) {
-      totalNodes += calculateTotalNodes(item.children) // 递归计算子节点的总数
+      res.push(cur)
     }
   }
-
-  return totalNodes
+  return res
 }

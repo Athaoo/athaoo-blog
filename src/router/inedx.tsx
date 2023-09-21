@@ -10,7 +10,7 @@ const DnfCustom = lazy(() => import('@src/containers/arts/dnfCustom'))
 const RotateBox2 = lazy(() => import('@src/containers/arts/scenes3d/rotateBox2'))
 const Hooks1 = lazy(() => import('@src/containers/arts/reactTest/hooks1'))
 const TestHooks2 = lazy(() => import('@src/containers/arts/reactTest/testHooks2'))
-const VList = lazy(() => import('@src/containers/arts/reactTest/vList'))
+const VList = lazy(() => import('@src/containers/arts/reactTest/VirTree'))
 const IframeTest = lazy(() => import('@src/containers/arts/reactTest/iframeTest'))
 
 export const lazySuspense = (component: React.ReactElement) => {
