@@ -16,7 +16,7 @@ const subReactRoutes: page[] = [
   { id: '1', path: 'react/dnfCustom', name: 'dnf自定义装备' },
   { id: '2', path: 'react/hooks1', name: 'hooks1' },
   { id: '3', path: 'react/testHooks2', name: 'testHooks2' },
-  { id: '4', path: 'react/vList', name: 'vList' },
+  { id: '4', path: 'react/vList', name: '虚拟树形列表' },
   { id: '5', path: 'react/iframeTest', name: 'iframeTest' },
 ]
 
