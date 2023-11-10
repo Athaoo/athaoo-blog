@@ -44,7 +44,7 @@ const Pa = ({ name, theme, children }: ParentProps) => {
 
   return (
     <Card>
-      爷爷:
+      祖节点:
       <div>
         姓名 {firstName}
         {name}
@@ -65,7 +65,7 @@ const Son = ({ name, age, school, children }: SonProps) => {
 
   return (
     <Card>
-      爹:
+      父节点:
       <div>
         姓名 {firstName}
         {name}
@@ -78,6 +78,7 @@ const Son = ({ name, age, school, children }: SonProps) => {
     </Card>
   )
 }
+
 const Gson = ({ name, age, school, address }: GSonProps) => {
   const { firstName, change } = useNameCtx()
 
@@ -87,7 +88,7 @@ const Gson = ({ name, age, school, address }: GSonProps) => {
 
   return (
     <Card>
-      笋子:
+      子节点:
       <div>
         姓名 {firstName}
         {name}
@@ -111,9 +112,10 @@ const App = () => {
   const changeFirstName = (firstName: string) => setFirstName(firstName)
   return (
     <Ctx.Provider value={{ firstName: firstName, change: changeFirstName }}>
-      <Pa name="爷爷" theme="white">
-        <Son name="爹" age={25} school={'家里蹲'}>
-          <Gson name="笋子" age={25} school={'科比烧烤'} address={'沈阳大街'}></Gson>
+      <div>测试context更新带来的父子节点重渲染</div>
+      <Pa name="祖节点" theme="white">
+        <Son name="父节点" age={25} school={'家里蹲'}>
+          <Gson name="子节点" age={25} school={'school1'} address={'沈阳大街'}></Gson>
         </Son>
       </Pa>
     </Ctx.Provider>
