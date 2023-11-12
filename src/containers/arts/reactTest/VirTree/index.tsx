@@ -12,7 +12,7 @@ import { defaultPlugins, createTree } from './virh5.js'
 import { Link } from 'react-router-dom'
 
 const App = () => {
-  const mock = mockListData(50000, 1)
+  const mock = mockListData(200000, 1)
   const myVirRootRef = useRef(null)
   const [ifRenderAntdExample, setIfRenderAntdExample] = useState(false)
   const treeRef = useRef(null)
@@ -46,10 +46,7 @@ const App = () => {
 
   return (
     <>
-      <Card
-        style={{
-          minHeight: '400px',
-        }}>
+      <Card>
         <Typography.Title level={2}>虚拟列表效果demo</Typography.Title>
         <div
           style={{
@@ -64,28 +61,38 @@ const App = () => {
           }}>
           虚拟列表demo链接
         </Link>
-        <Typography.Title level={2}>
-          antd tree, 最外层节点个数为80000, 最大随机深度为2
+        <Typography.Title level={2} className="my-4">
+          antd tree, 最外层节点个数为20w, 最大随机深度为2
         </Typography.Title>
         <Button
+          className="mb-4"
           onClick={() => {
             renderAntdSampleTree()
           }}>
           渲染
         </Button>
-        <div className="p-4 shadow-md mt-4">
+        <div
+          className="p-4 shadow-lg mt-4 rounded-md"
+          style={{
+            minHeight: '300px',
+          }}>
           {ifRenderAntdExample && <Tree treeData={mock} height={300}></Tree>}
         </div>
-        <Typography.Title level={2}>
-          手写的基于原生h5虚拟列表demo, 最外层节点数为90w个以上,最大随机深度为5
+        <Typography.Title level={2} className="my-4">
+          基于原生h5虚拟列表demo, 最外层节点数为90w个以上,最大随机深度为5
         </Typography.Title>
         <Button
+          className="mb-4"
           onClick={() => {
             renderMyTree()
           }}>
           渲染
         </Button>
-        <div className="p-4 shadow-md">
+        <div
+          className="p-4 shadow-lg rounded-md"
+          style={{
+            minHeight: '300px',
+          }}>
           <div id="virListRoot" className="relative" ref={myVirRootRef}></div>
         </div>
       </Card>
